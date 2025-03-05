@@ -335,22 +335,61 @@
 //   console.log(jonas[i], typeof jonas[i]);
 // }
 
-const jonas = [
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-  true,
-];
+// const jonas = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
 
-for (let i = jonas.length - 1; i >= 0; i--) {
-  console.log(i, jonas[i]);
+// for (let i = jonas.length - 1; i >= 0; i--) {
+//   console.log(i, jonas[i]);
+// }
+
+// for (let exercise = 1; exercise <= 3; exercise++) {
+//   console.log(`------ STARTING EXERCISE ${exercise}`);
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️`);
+//   }
+// }
+
+// let dice = Math.trunc(Math.random() * 6 + 1);
+// while (true) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6 + 1);
+//   if (dice === 6) {
+//     console.log("Loop is about to end");
+//     break;
+//   }
+// }
+
+const calcTip = function (bill) {
+  return bill * (bill >= 50 && bill <= 300 ? 0.15 : 0.2);
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(bills[i] + tip);
 }
 
-for (let exercise = 1; exercise <= 3; exercise++) {
-  console.log(`------ STARTING EXERCISE ${exercise}`);
-  for (let rep = 1; rep <= 5; rep++) {
-    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️`);
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
   }
-}
+
+  return sum / arr.length;
+};
+
+console.log(calcAverage(totals));
